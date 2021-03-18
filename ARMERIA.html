@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Mi pagina de pruebas</title>
+</head>
+
+<body>
+  <h1> ARMORY </h1>
+  <h2> Gamertag: <input id="gt"> </h2>
+  <h3> Main weapon>> </h3> 
+
+ <button style="background-color: rgba(155, 218, 38, 0.986);" onclick ='arma ("FX-05 XIUHCOALT")' > FX-05 XIUHCOALT </button>
+ <button style="background-color: rgba(155, 218, 38, 0.986);" onclick ='arma("RPG-7")' > RPG-7 </button>
+ <button style="background-color: rgba(155, 218, 38, 0.986);" onclick ='arma ("FN FAL")' > FN FAL </button>
+ <button id="back"> Restore </button>
+
+ <div id= "weapon"> No weapon selected </div>
+ <div id="level"> Select a weapon </div>
+
+  <script>
+//DiRy789
+
+//variable.onclick funciona como variable por lo que se puede sobreescribir
+
+//Creo la función, tomo el id y le asigno una variable
+    function arma (modelo) {
+      var lvl = document.getElementById("level");
+      var n
+
+      var level = 40
+      var unlk = document.getElementById("weapon");
+
+    //Utilizo switch para mostar el nivel del arma
+      switch (modelo) {
+        case "FX-05 XIUHCOALT": 
+          var n = 50
+          break;
+        case "RPG-7":
+          var n = 22
+          break;
+        case "FN FAL": 
+          var n = 34
+          break;
+          }
+
+    //Con .innerText cambio el nombre del div
+      lvl.innerText = "Level: " + n
+
+    //Utilizo if para mostrar si el arma está desbloqueada
+    if (n <= level){
+      unlk.innerText = "Unlocked"}
+      else {unlk.innerText = "Blocked up, your level is " + level}}
+      
+
+    let back = document.getElementById("back");
+
+    back.addEventListener("click", atras);
+
+    function atras(){
+      var lvl = document.getElementById("level");
+      var unlk = document.getElementById("weapon");
+
+      lvl.innerText = "No weapon selected" 
+      unlk.innerText = "Select a weapon"
+    }
+/*
+    let gt = document.getElementById("gt");
+
+    gt.addEventListener("input", GMT)
+
+    function GMT (){
+      alert("Insert your nickname")
+    }
+ */ 
+    /*console.log("Puto el que ejecute el codigo 7u7")
+    var nombre = "Gus"
+    console.log("Hola: " + nombre)
+    var nombre = "Sofi"
+    console.log("Hola: " + nombre)
+    var nombre = "Dani"
+    console.log("Hola: " + nombre)*/  
+
+    //arma("FX-05 XIUHCOALT")
+    //arma("RPG-7")
+    //arma("Browning M-50")
+    //arma("FN FAL")
+
+  </script>
+
+</body>
+
+</html>
